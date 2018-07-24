@@ -25,7 +25,7 @@
       <form action="#">
         <div>
           <label for="username">Username</label>
-          <input type="text" name="username" id="username">
+          <input type="text" name="username" id="username" required>
         </div>
 
         <fieldset>
@@ -42,20 +42,23 @@
 
         <fieldset>
           <legend>Game Type:</legend>
-          <input type="checkbox" name="gametype" id="blitz">
+          <input type="checkbox" name="gametype" id="blitz" checked>
           <label for="blitz">Blitz</label>
-          <input type="checkbox" name="gametype" id="rapid">
+
+          <input type="checkbox" name="gametype" id="rapid" checked>
           <label for="rapid">Rapid</label>
 
-          <input type="checkbox" name="gametype" id="classical">
+          <input type="checkbox" name="gametype" id="classical" checked>
           <label for="classical">Classical</label>
-          <input type="checkbox" name="gametype" id="correspondence">
+
+          <input type="checkbox" name="gametype" id="correspondence" checked>
           <label for="correspondence">Correspondence</label>
         </fieldset>
 
         <div>
           <label for="number-of-games">Last # of Games</label>
-          <input type="number" name="number-of-games" id="number-of-games">
+          <input type="number" name="number-of-games" id="number-of-games" min="10" max="200"
+            value="100" required>
         </div>
 
         <input type="submit" value="Search">
