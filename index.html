@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="                                           ">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lichess Opening</title>
+
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header role="banner">
+    <h1>Opening Troubles</h1>
+  </header>
+
+  <main role="main">
+
+    <section role="region">
+      <h2>Search</h2>
+      <form action="#">
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+
+        <fieldset>
+          <legend>Color: </legend>
+          <input type="radio" name="color" id="White" required>
+          <label for="white">white</label>
+
+          <input type="radio" name="color" id="Black" required>
+          <label for="black">black</label>
+
+          <input type="radio" name="color" id="Both" required checked>
+          <label for="both">both</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Game Type:</legend>
+          <input type="checkbox" name="gametype" id="blitz">
+          <label for="blitz">Blitz</label>
+          <input type="checkbox" name="gametype" id="rapid">
+          <label for="rapid">Rapid</label>
+
+          <input type="checkbox" name="gametype" id="classical">
+          <label for="classical">Classical</label>
+          <input type="checkbox" name="gametype" id="correspondence">
+          <label for="correspondence">Correspondence</label>
+        </fieldset>
+
+        <label for="number-of-games"></label>
+        <input type="number" name="number-of-games" id="number-of-games">
+
+        <input type="submit" value="Search">
+      </form>
+    </section>
+
+    <section role="region">
+      <h2>Openings</h2>
+      <table>
+        <thead>
+          <th scope="col">Opening</th>
+          <th scope="col">Losses</th>
+        </thead>
+        <tr>
+          <td>Two Knights Defense</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>Nimzo Indian Defense</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Ruy Lopez: Marshall Attack</td>
+          <td>3</td>
+        </tr>
+      </table>
+    </section>
+
+    <section role="region">
+      <h3>Two Knights Defense</h3>
+      <div>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Two_Knights_Defense">
+            Wikipedia Page
+          </a>
+        </p>
+        <p>
+          ECO C55-59
+        </p>
+      </div>
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=0GkyWrCskNY"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=AJFfdISQXEU">
+            <img src="https://i.ytimg.com/vi/AJFfdISQXEU/mqdefault.jpg" alt="Youtube Video Chess Traps #10: Two Knights Defense Trap">
+          </a>
+        </div>
+
+        <div>
+          <a href="https://www.youtube.com/watch?v=0GkyWrCskNY">
+            <img src="https://i.ytimg.com/vi/0GkyWrCskNY/mqdefault.jpg" alt="Youtube Video Two Knights Defense with 4. Ng5 | Chess Openings Explained">
+          </a>
+        </div>
+
+        <div>
+          <a href="https://www.youtube.com/watch?v=NKI-7UwuGTM">
+            <img src="https://i.ytimg.com/vi/NKI-7UwuGTM/mqdefault.jpg" alt="Youtube Video The Two Knights Defense | Chess Opening Tutorial">
+          </a>
+        </div>
+
+        <div>
+          <a href="https://www.youtube.com/watch?v=tIyoZiM3pGw">
+            <img src="https://i.ytimg.com/vi/tIyoZiM3pGw/mqdefault.jpg" alt="Youtube Video Double Rook Sacrifices | Two Knights Defense - Beginner Breakdown">
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="index.js"></script>
+  -->
+</body>
+
+</html>
