@@ -46,7 +46,31 @@ function Query(username, games, color, type) {
   }
   this.contentType = 'application/x-ndjson';
   this.type = 'GET';
-  this.success = parseData;
+  this.success = handleSuccess;
+  this.error = displayInvalidUser;
+  this.beforeSend = displayWaitMessage;
+}
+
+function displayInvalidUser() {
+  $('.js-message').html(`
+    <p class="error">Invalid Username</p>
+  `);
+}
+
+function displayWaitMessage() {
+  clearMessage();
+  $('.js-message').html(`
+  <p>Please wait...</p>
+  `)
+}
+
+function clearMessage() {
+  $('.js-message').empty();
+}
+
+function handleSuccess(data) {
+  clearMessage();
+  parseData(data);
 }
 
 function parseData(data) {
