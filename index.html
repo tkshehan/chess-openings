@@ -23,20 +23,21 @@
     <section role="region">
       <h2>Search</h2>
       <form action="#">
-
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username">
+        </div>
 
         <fieldset>
           <legend>Color: </legend>
           <input type="radio" name="color" id="White" required>
-          <label for="white">white</label>
+          <label for="white">White</label>
 
           <input type="radio" name="color" id="Black" required>
-          <label for="black">black</label>
+          <label for="black">Black</label>
 
           <input type="radio" name="color" id="Both" required checked>
-          <label for="both">both</label>
+          <label for="both">Both</label>
         </fieldset>
 
         <fieldset>
@@ -52,8 +53,10 @@
           <label for="correspondence">Correspondence</label>
         </fieldset>
 
-        <label for="number-of-games"></label>
-        <input type="number" name="number-of-games" id="number-of-games">
+        <div>
+          <label for="number-of-games">Last # of Games</label>
+          <input type="number" name="number-of-games" id="number-of-games">
+        </div>
 
         <input type="submit" value="Search">
       </form>
@@ -81,9 +84,9 @@
       </table>
     </section>
 
-    <section role="region">
+    <section role="region" class="opening">
       <h3>Two Knights Defense</h3>
-      <div>
+      <div class="opening-info">
         <p>
           <a href="https://en.wikipedia.org/wiki/Two_Knights_Defense">
             Wikipedia Page
@@ -98,7 +101,7 @@
           frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
       </div>
 
-      <div>
+      <div class="thumbnails">
         <div>
           <a href="https://www.youtube.com/watch?v=AJFfdISQXEU">
             <img src="https://i.ytimg.com/vi/AJFfdISQXEU/mqdefault.jpg" alt="Youtube Video Chess Traps #10: Two Knights Defense Trap">
