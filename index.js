@@ -1,6 +1,6 @@
 $(start);
 
-let userData = {};
+const userData = {};
 
 function start() {
   handleForm();
@@ -72,32 +72,54 @@ function clearMessage() {
 function handleSuccess(data) {
   clearMessage();
   parseData(data);
+  displayTable(userData.losses);
 }
 
 function parseData(data) {
   console.log('success');
   let splitData = data.split('\n\n\n');
   userData.games = splitData.map(parsePgn);
-  console.log(userData);
   userData.losses = findLosses(userData.games);
-  console.log(userData);
+  userData.losses = countOpenings(userData.losses);
+  userData.keysSorted = sortKeys(userData.losses);
+
+
+  function parsePgn(pgn) {
+    pgn = pgn.split('\n');
+    let game = {};
+    pgn.forEach((entry, index) => {
+      // Entry in the form of '[Key "value"]' 
+      game[pgn[index].slice(1, pgn[index].indexOf(' '))] =
+        pgn[index].slice(pgn[index].indexOf('"'), pgn[index].indexOf('"]')).slice(1);
+    });
+    return game;
+  }
+
+  function findLosses(games) {
+    return games.filter(function(game) {
+      if (game.Black === userData.playerName && game.Result === '1-0') return true;
+      if (game.White === userData.playerName && game.Result === '0-1') return true;
+      return false;
+    });
+  }
+
+  function countOpenings(games) {
+    let openings = {};
+    games.forEach(function(game) {
+      if (openings.hasOwnProperty(game.Opening)) {
+        openings[game.Opening]++;
+      } else {
+        openings[game.Opening] = 1;
+      }
+    });
+    return openings;
+  }
+
+  function sortKeys(losses) {
+    return Object.keys(losses).sort((a, b) => list[a] - list[b]);
+  }
 }
 
-function parsePgn(pgn) {
-  pgn = pgn.split('\n');
-  let game = {};
-  pgn.forEach((entry, index) => {
-    // Entry in the form of '[Key "value"]' 
-    game[pgn[index].slice(1, pgn[index].indexOf(' '))] =
-      pgn[index].slice(pgn[index].indexOf('"'), pgn[index].indexOf('"]')).slice(1);
-  });
-  return game;
-}
+function displayTable(data) {
 
-function findLosses(games) {
-  return games.filter(function(game) {
-    if (game.Black === userData.playerName && game.Result === '1-0') return true;
-    if (game.White === userData.playerName && game.Result === '0-1') return true;
-    return false;
-  });
 }
