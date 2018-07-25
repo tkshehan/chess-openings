@@ -44,6 +44,7 @@ function Query(username, games, color, type) {
     moves: false,
     opening: true,
   }
+
   this.contentType = 'application/x-ndjson';
   this.type = 'GET';
   this.success = handleSuccess;
