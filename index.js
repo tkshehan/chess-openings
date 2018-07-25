@@ -11,7 +11,6 @@ function handleForm() {
     event.preventDefault();
     userData.playerName = $('#username').val();
     searchLichess();
-    this.reset();
   });
 }
 
@@ -72,7 +71,7 @@ function clearMessage() {
 function handleSuccess(data) {
   clearMessage();
   parseData(data);
-  displayTable(userData.losses);
+  displayTable(userData.openings, userData.keysSorted);
 }
 
 function parseData(data) {
@@ -80,8 +79,8 @@ function parseData(data) {
   let splitData = data.split('\n\n\n');
   userData.games = splitData.map(parsePgn);
   userData.losses = findLosses(userData.games);
-  userData.losses = countOpenings(userData.losses);
-  userData.keysSorted = sortKeys(userData.losses);
+  userData.openings = countOpenings(userData.games);
+  userData.keysSorted = sortKeys(userData.openings);
 
 
   function parsePgn(pgn) {
@@ -115,11 +114,39 @@ function parseData(data) {
     return openings;
   }
 
-  function sortKeys(losses) {
-    return Object.keys(losses).sort((a, b) => list[a] - list[b]);
+  function sortKeys(games) {
+    let keys = Object.keys(games).sort((a, b) => games[b] - games[a])
+      .filter(a => a !== '?' && a !== 'undefined');
+    return keys;
   }
 }
 
-function displayTable(data) {
+function displayTable(data, keyOrder) {
+  renderEmptyTable();
+  renderRows(data, keyOrder);
 
+  function renderEmptyTable() {
+    $('.js-table').html(`
+        <h2>Openings</h2>
+      <table>
+        <thead>
+          <th scope="col">Opening</th>
+          <th scope="col">Games</th>
+        </thead>
+      </table>
+  `);
+  }
+
+  function renderRows(data, keyOrder) {
+    keyOrder.forEach(function(key) {
+      let row = `
+      <tr>
+        <td>${key}</td>
+        <td>${data[key]}</td>
+      </tr>
+      `;
+
+      $('table').append(row);
+    });
+  }
 }

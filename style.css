@@ -92,3 +92,7 @@ img {
 iframe {
   max-width: 100%;
 }
+
+tr {
+  border: solid black 1px;
+}
