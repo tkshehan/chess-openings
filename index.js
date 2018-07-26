@@ -61,7 +61,7 @@ function displayInvalidUser(error) {
 
 function displayWaitMessage() {
   $('.js-message').html(`
-  <p>Please wait 1 seconds for every 10 requested games</p>
+  <p>Please wait 1 second for every 10 requested games</p>
   `);
 }
 
