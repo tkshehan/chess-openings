@@ -141,3 +141,4 @@ function ecoSort(ecoCode) {
     this.isBetween = (min, max = min) => this.val >= min && this.val <= max;
   }
 }
+
