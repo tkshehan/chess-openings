@@ -27,7 +27,7 @@ function ecoSort(ecoCode) {
   function codeAOpenings(codeNum) {
 
     // A00-39
-    if (codeNum.isBetween(0)) return `Irregular Openings`;
+    if (codeNum.isBetween(0)) return `Irregular Chess Openings`;
     if (codeNum.isBetween(1)) return `Larsen's Opening`;
     if (codeNum.isBetween(2, 3)) return `Bird's Opening`;
     if (codeNum.isBetween(4, 9)) return `Réti Opening`;
@@ -63,19 +63,18 @@ function ecoSort(ecoCode) {
     if (codeNum.isBetween(0)) return `King's Pawn Opening`;
     if (codeNum.isBetween(1)) return `Scandinavian Defence`;
     if (codeNum.isBetween(2, 5)) return `Alekhine's Defense`;
-    if (codeNum.isBetween(6)) return `Robatsch (Modern) Defence`;
+    if (codeNum.isBetween(6)) return `Modern Defence`;
     if (codeNum.isBetween(7, 9)) return `Pirc Defense`;
     if (codeNum.isBetween(10, 10)) return `Caro-Kann Defence`;
 
     // B20-99
     if (codeNum.isBetween(20, 33)) return `Sicilian Defence`;
-    if (codeNum.isBetween(34, 39)) return `Sicilian, Accelerated Fianchetto`;
+    if (codeNum.isBetween(34, 39)) return `Accelerated Dragon`;
     if (codeNum.isBetween(40, 59)) return `Sicilian Defence`;
     if (codeNum.isBetween(60, 69)) return `Sicilian, Richter-Rauzer`;
-    if (codeNum.isBetween(70, 79)) return `Sicilian, Dragon`;
-    if (codeNum.isBetween(80, 85)) return `Sicilian, Scheveningen`;
-    if (codeNum.isBetween(86, 89)) return `Sicilian, Sozin`;
-    if (codeNum.isBetween(90, 99)) return `Sicilian, Najdorf`;
+    if (codeNum.isBetween(70, 79)) return `Sicilian Dragon`;
+    if (codeNum.isBetween(80, 89)) return `Sicilian Scheveningen`;
+    if (codeNum.isBetween(90, 99)) return `Sicilian Najdorf`;
   }
 
   function codeCOpenings(codeNum) {
@@ -128,7 +127,7 @@ function ecoSort(ecoCode) {
 
     // E00-59
     if (codeNum.isBetween(0)) return `Queen's Pawn Game`;
-    if (codeNum.isBetween(1, 10)) return `Catalan`;
+    if (codeNum.isBetween(1, 10)) return `Catalan Opening`;
     if (codeNum.isBetween(11)) return `Bogo-Indian Defence`;
     if (codeNum.isBetween(12, 19)) return `Queen's Indian Defence`;
     if (codeNum.isBetween(20, 59)) return `Nimzo-Indian Defence`;
