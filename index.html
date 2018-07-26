@@ -15,7 +15,7 @@
 <body>
 
   <header role="banner">
-    <h1>Opening Troubles</h1>
+    <h1>Common Openings Played</h1>
   </header>
 
   <main role="main">
@@ -30,64 +30,55 @@
 
         <fieldset>
           <legend>Color: </legend>
-          <input type="radio" name="color" id="White" required>
+          <input type="radio" name="color" id="white" required>
           <label for="white">White</label>
 
-          <input type="radio" name="color" id="Black" required>
+          <input type="radio" name="color" id="black" required>
           <label for="black">Black</label>
 
-          <input type="radio" name="color" id="Both" required checked>
+          <input type="radio" name="color" id="both" required checked>
           <label for="both">Both</label>
         </fieldset>
 
         <fieldset>
           <legend>Game Type:</legend>
-          <input type="checkbox" name="gametype" id="blitz" checked>
+          <input type="checkbox" name="gametype" id="bullet" value="bullet">
+          <label for="bullet">Bullet</label>
+
+          <input type="checkbox" name="gametype" id="blitz" value="blitz" checked>
           <label for="blitz">Blitz</label>
 
-          <input type="checkbox" name="gametype" id="rapid" checked>
+          <input type="checkbox" name="gametype" id="rapid" value="rapid" checked>
           <label for="rapid">Rapid</label>
 
-          <input type="checkbox" name="gametype" id="classical" checked>
+          <input type="checkbox" name="gametype" id="classical" value="classical" checked>
           <label for="classical">Classical</label>
 
-          <input type="checkbox" name="gametype" id="correspondence" checked>
+          <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
+            checked>
           <label for="correspondence">Correspondence</label>
         </fieldset>
 
         <div>
           <label for="number-of-games">Last # of Games</label>
           <input type="number" name="number-of-games" id="number-of-games" min="10" max="200"
-            value="100" required>
+            value="20" required>
         </div>
 
         <input type="submit" value="Search">
       </form>
+      <div class="js-message message" aria-live="assertive">
+
+      </div>
     </section>
 
-    <section role="region">
-      <h2>Openings</h2>
-      <table>
-        <thead>
-          <th scope="col">Opening</th>
-          <th scope="col">Losses</th>
-        </thead>
-        <tr>
-          <td>Two Knights Defense</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td>Nimzo Indian Defense</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>Ruy Lopez: Marshall Attack</td>
-          <td>3</td>
-        </tr>
-      </table>
+    <section role="region" class="js-table table">
+
     </section>
 
+    <!--
     <section role="region" class="opening">
+
       <h3>Two Knights Defense</h3>
       <div class="opening-info">
         <p>
@@ -121,14 +112,13 @@
           <img src="https://i.ytimg.com/vi/tIyoZiM3pGw/mqdefault.jpg" alt="Youtube Video Double Rook Sacrifices | Two Knights Defense - Beginner Breakdown">
         </div>
       </div>
-    </section>
-
+  </section> -->
   </main>
 
-  <!--
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="ECO-sort.js"></script>
   <script src="index.js"></script>
-  -->
+
 </body>
 
 </html>

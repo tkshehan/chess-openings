@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+a, a:visited {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline'
+}
+
 header {
   text-align: center;
 }
@@ -35,6 +45,16 @@ form fieldset {
   border: none;
 }
 
+.message {
+  text-align: center;
+}
+
+.error {
+  font-family: monospace;
+
+  color: red;
+}
+
 h1, h2, h3 {
   text-align: center;
 }
@@ -45,6 +65,8 @@ input[type=submit] {
 }
 
 table {
+  width: 100%;
+
   text-align: left;
 }
 
@@ -81,4 +103,8 @@ img {
 
 iframe {
   max-width: 100%;
+}
+
+tr {
+  border: solid black 1px;
 }
