@@ -15,8 +15,9 @@ function ecoSort(ecoCode) {
     case 'D':
       opening = codeDOpenings(codeNum);
       break;
-    case `E`:
+    case 'E':
       opening = codeEOpenings(codeNum);
+      break;
     default:
       console.log('Invalid Code ' + ecoCode);
   }
