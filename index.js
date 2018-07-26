@@ -1,5 +1,6 @@
 $(start);
 
+
 const userData = {};
 
 function start() {
@@ -17,10 +18,10 @@ function handleForm() {
 function searchLichess() {
   let query = buildQuery();
   $.ajax(query);
-  console.log('please wait');
 }
 
 function buildQuery() {
+
   let gameTypes = '';
   $('[name=gametype]').filter(type => $(type).attr('checked')).each(function() {
     gameTypes += $(this).val() + ',';
@@ -98,7 +99,7 @@ function parseData(data) {
 
   function sortOpening(game) {
     try {
-      game.Opening = sort(game.ECO);
+      game.Opening = ecoSort(game.ECO);
     } catch (e) {
       console.log(e);
     }
