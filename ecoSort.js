@@ -18,7 +18,7 @@ function ecoSort(ecoCode) {
     case `E`:
       opening = codeEOpenings(codeNum);
     default:
-      console.log('Invalid Code')
+      console.log('Invalid Code ' + ecoCode);
   }
   return opening;
 
