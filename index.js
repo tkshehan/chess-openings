@@ -62,7 +62,7 @@ function displayInvalidUser(error) {
 function displayWaitMessage() {
   clearMessage();
   $('.js-message').html(`
-  <p>Please wait 1 seconds for every 10 requested games.</p>
+  <p>Please wait 1 seconds for every 10 requested games</p>
   `);
 }
 
@@ -144,7 +144,11 @@ function displayTable(data, keyOrder) {
       if (data[key] <= 1) return;
       let row = `
       <tr>
-        <td>${key}</td>
+        <td>
+          <a href="https://wikipedia.org/wiki/${key}" target="_blank">
+            ${key}
+          </a>
+        </td>
         <td>${data[key]}</td>
       </tr>
       `;
