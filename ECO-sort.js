@@ -38,9 +38,10 @@ function sort(ecoCode) {
     if (codeNum.isBetween(43, 44)) return `Old Benoni Defense`;
 
     // A45-49
-    if (codeNum.isBetween(45, 46)) return `Queen's Pawn Game`;
+    if (codeNum.isBetween(45)) return `Queen's Pawn Game`;
+    if (codeNum.isBetween(46)) return `Torre Attack`
     if (codeNum.isBetween(47)) return `Queen's Indian Defense`;
-    if (codeNum.isBetween(48, 49)) return `King's Indan Defense`;
+    if (codeNum.isBetween(48, 49)) return `East Indian Defence`;
 
     // A50-79
     if (codeNum.isBetween(50)) return `Queen's Pawn Game`;
@@ -109,7 +110,7 @@ function sort(ecoCode) {
     // D00-69
     if (codeNum.isBetween(0)) return `Queen's Pawn Game`;
     if (codeNum.isBetween(1)) return `Richter-Veresov Attack`;
-    if (codeNum.isBetween(2)) return `Queen's Pawn Game`;
+    if (codeNum.isBetween(2)) return `London System`;
     if (codeNum.isBetween(3)) return `Torre Attack`;
     if (codeNum.isBetween(4, 5)) return `Queen's Pawn Game`;
     if (codeNum.isBetween(6)) return `Queen's Gambit`;
