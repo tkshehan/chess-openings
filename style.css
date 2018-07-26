@@ -5,11 +5,11 @@
 a, a:visited {
   text-decoration: none;
 
-  color: darkgray;
+  color: rgb(133, 133, 133);
 }
 
 a:hover {
-  text-decoration: underline'
+  text-decoration: underline;
 }
 
 header {
