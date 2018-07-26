@@ -22,7 +22,7 @@ function searchLichess() {
 
 function buildQuery() {
   let gameTypes = '';
-  $('[name=gametype][checked]').each(function() {
+  $('[name=gametype]').filter(type => $(type).attr('checked')).each(function() {
     gameTypes += $(this).val() + ',';
   });
 
@@ -49,19 +49,21 @@ function Query(username, games, color, type) {
   this.success = handleSuccess;
   this.error = displayInvalidUser;
   this.beforeSend = displayWaitMessage;
+  this.timeout = 100000;
 }
 
-function displayInvalidUser() {
+function displayInvalidUser(error) {
+  console.log(error);
   $('.js-message').html(`
-    <p class="error">Invalid Username</p>
+    <p class="error">no known user has games of this type</p>
   `);
 }
 
 function displayWaitMessage() {
   clearMessage();
   $('.js-message').html(`
-  <p>Please wait...</p>
-  `)
+  <p>Please wait 1 seconds for every 10 requested game.</p>
+  `);
 }
 
 function clearMessage() {
@@ -78,7 +80,7 @@ function parseData(data) {
   console.log('success');
   let splitData = data.split('\n\n\n');
   userData.games = splitData.map(parsePgn);
-  userData.losses = findLosses(userData.games);
+  userData.games.forEach(sortOpening);
   userData.openings = countOpenings(userData.games);
   userData.keysSorted = sortKeys(userData.openings);
 
@@ -94,12 +96,12 @@ function parseData(data) {
     return game;
   }
 
-  function findLosses(games) {
-    return games.filter(function(game) {
-      if (game.Black === userData.playerName && game.Result === '1-0') return true;
-      if (game.White === userData.playerName && game.Result === '0-1') return true;
-      return false;
-    });
+  function sortOpening(game) {
+    try {
+      game.Opening = sort(game.ECO);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   function countOpenings(games) {
@@ -116,7 +118,7 @@ function parseData(data) {
 
   function sortKeys(games) {
     let keys = Object.keys(games).sort((a, b) => games[b] - games[a])
-      .filter(a => a !== '?' && a !== 'undefined');
+      .filter(a => a !== '?' && a !== 'undefined' && a !== '');
     return keys;
   }
 }
@@ -139,6 +141,7 @@ function displayTable(data, keyOrder) {
 
   function renderRows(data, keyOrder) {
     keyOrder.forEach(function(key) {
+      if (data[key] <= 1) return;
       let row = `
       <tr>
         <td>${key}</td>

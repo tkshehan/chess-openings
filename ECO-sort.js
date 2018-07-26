@@ -1,6 +1,7 @@
 function sort(ecoCode) {
-  let opening = '';
+  let opening;
   let codeNum = new CodeNum(ecoCode.slice(1));
+
   switch (ecoCode.charAt(0)) {
     case 'A':
       opening = codeAOpenings(codeNum);
