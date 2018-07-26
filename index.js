@@ -1,6 +1,5 @@
 $(start);
 
-
 const userData = {};
 
 function start() {
@@ -61,7 +60,6 @@ function displayInvalidUser(error) {
 }
 
 function displayWaitMessage() {
-  clearMessage();
   $('.js-message').html(`
   <p>Please wait 1 seconds for every 10 requested games</p>
   `);
@@ -71,8 +69,14 @@ function clearMessage() {
   $('.js-message').empty();
 }
 
+function successMessage() {
+  $('.js-message').html(`
+    <p>Openings with single games played have been removed</p>
+  `);
+}
+
 function handleSuccess(data) {
-  clearMessage();
+  successMessage();
   parseData(data);
   displayTable(userData.openings, userData.keysSorted);
 }
