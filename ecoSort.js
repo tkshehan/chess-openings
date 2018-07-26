@@ -64,7 +64,7 @@ function ecoSort(ecoCode) {
     if (codeNum.isBetween(2, 5)) return `Alekhine's Defense`;
     if (codeNum.isBetween(6)) return `Robatsch (Modern) Defence`;
     if (codeNum.isBetween(7, 9)) return `Pirc Defense`;
-    if (codeNum.isBetween(10, 10)) return `Car-Kann Defence`;
+    if (codeNum.isBetween(10, 10)) return `Caro-Kann Defence`;
 
     // B20-99
     if (codeNum.isBetween(20, 33)) return `Sicilian Defence`;
