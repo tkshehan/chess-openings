@@ -1,13 +1,14 @@
 body {
+  background-color: #99d8c9;
+}
+
+section, header {
+  border: 1px solid black;
+  background-color: #e5f5f9;
 }
 
 header {
-  border: solid black 1px;
   border-top: 0;
-}
-
-section {
-  border: 1px solid black;
 }
 
 a, a:visited {
