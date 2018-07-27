@@ -31,5 +31,7 @@ table {
 }
 
 td {
+  padding: 5px;
+
   border: #99d8c9 1px solid;
 }
