@@ -71,7 +71,7 @@ function clearMessage() {
 
 function successMessage() {
   $('.js-message').html(`
-    <p>Openings with single games played have been removed</p>
+    <p>Openings with single games played have been omitted</p>
   `);
 }
 
