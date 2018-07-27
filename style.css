@@ -20,3 +20,8 @@ header {
 a, a:visited {
   color: darkblue;
 }
+
+input[type=submit] {
+  border: 1px solid black;
+  background-color: #99d8c9;
+}
