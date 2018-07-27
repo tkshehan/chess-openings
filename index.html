@@ -25,43 +25,52 @@
       <h2>Search Lichess</h2>
       <form action="#">
         <div>
-          <label for="username">Username</label>
+          <label for="username">Username: </label>
           <input type="text" name="username" id="username" required>
         </div>
 
         <fieldset>
           <legend>Color: </legend>
-          <input type="radio" name="color" id="white" value="white" required>
-          <label for="white">White</label>
 
-          <input type="radio" name="color" id="black" value="black" required>
-          <label for="black">Black</label>
+          <label for="white">
+            <input type="radio" name="color" id="white" value="white" required> White
+          </label>
 
-          <input type="radio" name="color" id="both" value="null" required checked>
-          <label for="both">Both</label>
+          <label for="black">
+            <input type="radio" name="color" id="black" value="black" required> Black
+          </label>
+
+          <label for="both">
+            <input type="radio" name="color" id="both" value="null" required checked> Both</label>
         </fieldset>
 
         <fieldset>
           <legend>Game Type:</legend>
-          <input type="checkbox" name="gametype" id="bullet" value="bullet">
-          <label for="bullet">Bullet</label>
 
-          <input type="checkbox" name="gametype" id="blitz" value="blitz" checked>
-          <label for="blitz">Blitz</label>
+          <label for="bullet">
+            <input type="checkbox" name="gametype" id="bullet" value="bullet"> Bullet
+          </label>
 
-          <input type="checkbox" name="gametype" id="rapid" value="rapid" checked>
-          <label for="rapid">Rapid</label>
+          <label for="blitz">
+            <input type="checkbox" name="gametype" id="blitz" value="blitz" checked> Blitz
+          </label>
 
-          <input type="checkbox" name="gametype" id="classical" value="classical" checked>
-          <label for="classical">Classical</label>
+          <label for="rapid">
+            <input type="checkbox" name="gametype" id="rapid" value="rapid" checked> Rapid
+          </label>
 
-          <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
-            checked>
-          <label for="correspondence">Correspondence</label>
+          <label for="classical">
+            <input type="checkbox" name="gametype" id="classical" value="classical" checked> Classical
+          </label>
+
+          <label for="correspondence">
+            <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
+              checked> Correspondence
+          </label>
         </fieldset>
 
         <div>
-          <label for="number-of-games">Last # of Games</label>
+          <label for="number-of-games">Last # of Games: </label>
           <input type="number" name="number-of-games" id="number-of-games" min="10" max="200"
             value="20" required>
         </div>
@@ -87,7 +96,6 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="ecoSort.js"></script>
-
   <script src="index.js"></script>
 
 </body>
