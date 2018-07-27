@@ -1,13 +1,12 @@
 body {
-  background-color: #d0f2ad;
 }
 
 header {
-  background-color: #44592e;
+  border-bottom: 1px solid black;
 }
 
 section {
-  background-color: #86a666;
+  border: 1px solid black;
 }
 
 a, a:visited {
