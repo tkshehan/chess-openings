@@ -113,9 +113,9 @@ table {
   width: 300px;
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 700px) {
   fieldset {
-    display: inline;
+    display: inline-block;
   }
 
   header, main {
