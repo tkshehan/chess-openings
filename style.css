@@ -2,7 +2,8 @@ body {
 }
 
 header {
-  border-bottom: 1px solid black;
+  border: solid black 1px;
+  border-top: 0;
 }
 
 section {

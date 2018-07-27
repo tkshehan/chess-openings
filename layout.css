@@ -15,8 +15,8 @@ a:hover {
 }
 
 header {
-  width: 100%;
-  margin: 0 0 15px auto;
+  max-width: 500px;
+  margin: 0 auto;
   padding: 20px 0;
 
   text-align: center;
@@ -83,10 +83,6 @@ input[type=submit] {
 table {
   width: 100%;
   margin-bottom: 20px;
-}
-
-tr, thead {
-  border: solid black 2px;
 }
 
 .left {
