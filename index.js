@@ -137,8 +137,8 @@ function displayTable(data, keyOrder) {
         <h2>Openings</h2>
       <table>
         <thead>
-          <th scope="col">Opening</th>
-          <th scope="col">Games</th>
+          <th scope="col" class="left">Opening</th>
+          <th scope="col" class="right">Games</th>
         </thead>
       </table>
   `);
@@ -149,12 +149,12 @@ function displayTable(data, keyOrder) {
       if (data[key] <= 1) return;
       let row = `
       <tr>
-        <td>
+        <td class="left">
           <a href="https://wikipedia.org/wiki/${key}" target="_blank">
             ${key}
           </a>
         </td>
-        <td>${data[key]}</td>
+        <td class="right">${data[key]}</td>
       </tr>
       `;
 

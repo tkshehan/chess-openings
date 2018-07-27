@@ -1,11 +1,15 @@
 body {
-  background-color: #1d7a39;
+  background-color: #d0f2ad;
 }
 
-main, header {
-  background-color: #359151;
+header {
+  background-color: #44592e;
 }
 
 section {
-  background-color: #5eb077;
+  background-color: #86a666;
+}
+
+a, a:visited {
+  color: darkblue;
 }
