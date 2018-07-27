@@ -26,14 +26,15 @@
       <form action="#">
         <div>
           <label for="username">Username: </label>
-          <input type="text" name="username" id="username" autocomplete="off" required>
+          <input type="text" name="username" id="username" autocomplete="off" aria-required="true"
+            placeholder="username" value="">
         </div>
 
         <fieldset>
           <legend>Color: </legend>
 
           <label for="white">
-            <input type="radio" name="color" id="white" value="white" required> White
+            <input type="radio" name="color" id="white" value="white" required checked> White
           </label>
 
           <label for="black">
@@ -41,7 +42,7 @@
           </label>
 
           <label for="both">
-            <input type="radio" name="color" id="both" value="null" required checked> Both</label>
+            <input type="radio" name="color" id="both" value="null" required> Both</label>
         </fieldset>
 
         <fieldset>

@@ -71,7 +71,7 @@ function clearMessage() {
 
 function successMessage() {
   $('.js-message').html(`
-    <p>Openings with single games played have been omitted</p>
+    <p>Games for ${userData.playerName}</p>
   `);
 }
 
@@ -146,7 +146,6 @@ function displayTable(data, keyOrder) {
 
   function renderRows(data, keyOrder) {
     keyOrder.forEach(function(key) {
-      if (data[key] <= 1) return;
       let row = `
       <tr>
         <td class="left">
