@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="                                           ">
+  <meta name="description" content="Find your most common lichess openings">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lichess Opening</title>
 
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="layout.css">
 </head>
 
 <body>
@@ -73,33 +74,20 @@
     </section>
 
     <section role="region" class="js-table table" aria-live="assertive">
-
+      <h2>Openings</h2>
+      <table>
+        <thead>
+          <th scope="col" class="left">Opening</th>
+          <th scope="col" class="right">Games</th>
+        </thead>
+      </table>
     </section>
 
-    <!--
-    <section role="region" class="opening">
-
-      <h3>Two Knights Defense</h3>
-      <div class="opening-info">
-        <p>
-          <a href="https://en.wikipedia.org/wiki/Two_Knights_Defense">
-            Wikipedia Page
-          </a>
-        </p>
-        <p>
-          ECO C55-59
-        </p>
-      </div>
-      <div>
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/0GkyWrCskNY"
-          frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-      </div>
-  </section> -->
   </main>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="ecoSort.js"></script>
-  
+
   <script src="index.js"></script>
 
 </body>
