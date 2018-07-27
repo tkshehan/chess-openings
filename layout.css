@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 
-main {
-  max-width: 500px;
+main, header {
+  max-width: 80%;
 }
 
 a, a:visited {
@@ -15,7 +15,6 @@ a:hover {
 }
 
 header {
-  max-width: 500px;
   margin: 0 auto;
   padding: 20px 0;
 
@@ -55,10 +54,17 @@ form div {
   margin: 5px;
 }
 
-form fieldset {
+fieldset {
+  display: flex;
+
   margin: 5px;
 
   border: none;
+}
+
+input {
+  max-width: 50%;
+  margin: 0 5px;
 }
 
 .message {
@@ -104,4 +110,14 @@ table {
   justify-content: space-between;
 
   width: 300px;
+}
+
+@media only screen and (min-width: 600px) {
+  fieldset {
+    display: inline;
+  }
+
+  header, main {
+    width: 550px;
+  }
 }
