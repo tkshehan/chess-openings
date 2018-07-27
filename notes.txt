@@ -1,0 +1,31 @@
+
+<-snippet for later use->
+function openingLosses(games) {
+  let losses = games.filter(function(game) {
+    if (game.Black === playerName && game.Result === '1-0') return true;
+    if (game.White === playerName && game.Result === '0-1') return true;
+    return false;
+  });
+}
+
+# TODO
+
+Add section below form with additional information.
+Shorten wait time.
+
+
+UserNotes 
+
+  Need more variety on:
+    'Queen's Pawn Game' - Done
+    'King's Pawn Game'
+
+  Specific Varieties Requested:
+    'London System' - Done
+
+  Make it more obvious that the openings are links. - Done
+  Color selection isnt working. - Fixed
+  Not apparent games of 1 are cut. - Done
+  Information would look better as a graph.
+  Win/Loss ratio would be more helpful.
+  List of individual games by openings below results.

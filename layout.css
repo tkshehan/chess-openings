@@ -100,19 +100,6 @@ table {
   text-align: right;
 }
 
-.opening {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.opening-info {
-  display: flex;
-  justify-content: space-between;
-
-  width: 300px;
-}
-
 @media only screen and (min-width: 700px) {
   fieldset {
     display: inline-block;
