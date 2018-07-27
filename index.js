@@ -130,7 +130,12 @@ function parseData(data) {
 
 function displayTable(data, keyOrder) {
   renderEmptyTable();
-  renderRows(data, keyOrder);
+  if (keyOrder.length >= 1) {
+    renderRows(data, keyOrder);
+  } else {
+    displayInvalidUser();
+  }
+
 
   function renderEmptyTable() {
     $('.js-table').html(`
