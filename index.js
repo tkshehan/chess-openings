@@ -103,7 +103,7 @@ function parseData(data) {
 
   function sortOpening(game) {
     try {
-      game.Opening = ecoSort(game.ECO);
+      game.Opening = sortByEco(game.ECO);
     } catch (e) {
       console.log(e);
     }

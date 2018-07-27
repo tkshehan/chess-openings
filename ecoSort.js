@@ -1,4 +1,4 @@
-function ecoSort(ecoCode) {
+function sortByEco(ecoCode) {
   let opening;
   let codeNum = new CodeNum(ecoCode.slice(1));
 
