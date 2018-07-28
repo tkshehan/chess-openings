@@ -88,6 +88,7 @@ function parseData(data) {
   userData.games.forEach(sortOpening);
   userData.openings = countOpenings(userData.games);
   userData.keysSorted = sortKeys(userData.openings);
+  userData.wikiUrls = userData.keysSorted.map(opening => openSearch(opening));
 
 
   function parsePgn(pgn) {
@@ -128,10 +129,10 @@ function parseData(data) {
   }
 }
 
-function displayTable(data, keyOrder) {
+function displayTable(data, keyOrder, url) {
   renderEmptyTable();
   if (keyOrder.length >= 1) {
-    renderRows(data, keyOrder);
+    renderRows(data, keyOrder, url);
   } else {
     displayInvalidUser();
   }
@@ -150,11 +151,11 @@ function displayTable(data, keyOrder) {
   }
 
   function renderRows(data, keyOrder) {
-    keyOrder.forEach(function(key) {
+    keyOrder.forEach(function(key, index) {
       let row = `
       <tr>
         <td class="left">
-          <a href="https://wikipedia.org/wiki/${key}" target="_blank">
+          <a href="${userData.wikiUrls[index]}" target="_blank">
             ${key}
           </a>
         </td>
@@ -165,4 +166,17 @@ function displayTable(data, keyOrder) {
       $('table').append(row);
     });
   }
+}
+
+function openSearch(opening) {
+  let query = {
+    action: 'opensearch',
+    search: opening,
+    limit: 1,
+    namespace: 0,
+  }
+
+  return $.getJSON('https://en.wikipedia.org/w/api.php', query, function(data) {
+    return data[data.length]
+  });
 }
