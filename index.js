@@ -48,11 +48,19 @@ function Query(username, games, color, type) {
   this.type = 'GET';
   this.success = handleSuccess;
   this.error = displayInvalidUser;
-  this.beforeSend = displayWaitMessage;
+  this.beforeSend = function() {
+    displayWaitMessage;
+    $('.js-submit').prop('disabled', true);
+  }
   this.timeout = 100000;
 }
 
+function enableSubmit() {
+  $('.js-submit').prop('disabled', false);
+}
+
 function displayInvalidUser(error) {
+  enableSubmit();
   console.log(error);
   $('.js-message').html(`
     <p class="error">no known user has games of this type</p>
@@ -65,10 +73,6 @@ function displayWaitMessage() {
   `);
 }
 
-function clearMessage() {
-  $('.js-message').empty();
-}
-
 function successMessage() {
   $('.js-message').html(`
     <p>Games for ${userData.playerName}</p>
@@ -76,9 +80,30 @@ function successMessage() {
 }
 
 function handleSuccess(data) {
+  enableSubmit();
   successMessage();
   parseData(data);
-  displayTable(userData.openings, userData.keysSorted);
+  Promise.all(userData.keysSorted.map(opening => openSearch(opening)))
+    .then(function(urls) {
+      urls = urls.map(data => data[3][0]);
+      displayTable(userData.openings, userData.keysSorted, urls);
+    });
+}
+
+function openSearch(opening) {
+  let query = {
+    origin: '*',
+    action: 'opensearch',
+    search: opening,
+    limit: 1,
+    namespace: 0,
+  }
+
+  return $.getJSON('https://en.wikipedia.org/w/api.php', query, function(data) {
+    return data;
+  });
+
+
 }
 
 function parseData(data) {
@@ -88,7 +113,7 @@ function parseData(data) {
   userData.games.forEach(sortOpening);
   userData.openings = countOpenings(userData.games);
   userData.keysSorted = sortKeys(userData.openings);
-  userData.wikiUrls = userData.keysSorted.map(opening => openSearch(opening));
+
 
 
   function parsePgn(pgn) {
@@ -129,10 +154,10 @@ function parseData(data) {
   }
 }
 
-function displayTable(data, keyOrder, url) {
+function displayTable(data, keyOrder, urls) {
   renderEmptyTable();
   if (keyOrder.length >= 1) {
-    renderRows(data, keyOrder, url);
+    renderRows(data, keyOrder, urls);
   } else {
     displayInvalidUser();
   }
@@ -150,12 +175,12 @@ function displayTable(data, keyOrder, url) {
   `);
   }
 
-  function renderRows(data, keyOrder) {
+  function renderRows(data, keyOrder, urls) {
     keyOrder.forEach(function(key, index) {
       let row = `
       <tr>
         <td class="left">
-          <a href="${userData.wikiUrls[index]}" target="_blank">
+          <a href="${urls[index]}" target="_blank">
             ${key}
           </a>
         </td>
@@ -166,17 +191,4 @@ function displayTable(data, keyOrder, url) {
       $('table').append(row);
     });
   }
-}
-
-function openSearch(opening) {
-  let query = {
-    action: 'opensearch',
-    search: opening,
-    limit: 1,
-    namespace: 0,
-  }
-
-  return $.getJSON('https://en.wikipedia.org/w/api.php', query, function(data) {
-    return data[data.length]
-  });
 }
