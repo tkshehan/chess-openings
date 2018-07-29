@@ -83,6 +83,7 @@ function handleSuccess(data) {
   enableSubmit();
   successMessage();
   parseData(data);
+
   Promise.all(userData.keysSorted.map(opening => openSearch(opening)))
     .then(function(urls) {
       urls = urls.map(data => data[3][0]);
