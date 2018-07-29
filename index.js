@@ -30,7 +30,7 @@ function buildQuery() {
     $('#username').val(),
     $('#number-of-games').val(),
     $('input[name=color]:checked').val(),
-    gameTypes
+    gameTypes,
   );
 }
 
