@@ -112,7 +112,7 @@ function parseData(data) {
   userData.games = splitData.map(parsePgn);
   userData.games.forEach(sortOpening);
   userData.openings = countOpenings(userData.games);
-  userData.keysSorted = sortKeys(userData.openings);
+  userData.keysSorted = sortKeysByWins(userData.openings);
 
 
 
@@ -147,7 +147,7 @@ function parseData(data) {
     return openings;
   }
 
-  function sortKeys(games) {
+  function sortKeysByWins(games) {
     let keys = Object.keys(games).sort((a, b) => games[b] - games[a])
       .filter(a => a !== '?' && a !== 'undefined' && a !== '');
     return keys;
