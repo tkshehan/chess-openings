@@ -1,144 +1,127 @@
 function sortByEco(ecoCode) {
-  let opening;
-  let codeNum = new CodeNum(ecoCode.slice(1));
+  let codeNum = ecoCode.slice(1);
+  let openingCodeList = findCodeList(ecoCode.charAt(0));
 
-  switch (ecoCode.charAt(0)) {
-    case 'A':
-      opening = codeAOpenings(codeNum);
-      break;
-    case 'B':
-      opening = codeBOpenings(codeNum);
-      break;
-    case 'C':
-      opening = codeCOpenings(codeNum);
-      break;
-    case 'D':
-      opening = codeDOpenings(codeNum);
-      break;
-    case 'E':
-      opening = codeEOpenings(codeNum);
-      break;
-    default:
-      console.log('Invalid Code ' + ecoCode);
-  }
-  return opening;
+  let codeKey = Object.keys(openingCodeList)
+    .sort((a, b) => b - a)
+    .find(num => codeNum >= parseInt(num));
+  return openingCodeList[codeKey];
 
+  function findCodeList(codeLetter) {
+    const openingMasterList = [
+      {
+        // A00-39
+        0: `Irregular Chess Openings`,
+        1: `Larsen's Opening`,
+        2: `Bird's Opening`,
+        4: `Réti Opening`,
+        10: `English Opening`,
 
-  function codeAOpenings(codeNum) {
+        // A40-44
+        40: `Queen's Pawn Game`,
+        42: `Modern Defense`,
+        43: `Old Benoni Defense`,
 
-    // A00-39
-    if (codeNum.isBetween(0)) return `Irregular Chess Openings`;
-    if (codeNum.isBetween(1)) return `Larsen's Opening`;
-    if (codeNum.isBetween(2, 3)) return `Bird's Opening`;
-    if (codeNum.isBetween(4, 9)) return `Réti Opening`;
-    if (codeNum.isBetween(10, 39)) return `English Opening`;
+        // A45-49
+        45: `Queen's Pawn Game`,
+        46: `Torre Attack`,
+        47: `Queen's Indian Defense`,
+        48: `East Indian Defence`,
 
-    // A40-44
-    if (codeNum.isBetween(40, 41)) return `Queen's Pawn Game`;
-    if (codeNum.isBetween(42)) return `Modern Defense`;
-    if (codeNum.isBetween(43, 44)) return `Old Benoni Defense`;
+        // A50-79
+        50: `Queen's Pawn Game`,
+        51: `Budapest Gamit`,
+        53: `Old Indian Defense`,
+        56: `Benoni Defense`,
+        57: `Benko Gamit`,
+        60: `Benoni Defense`,
+        70: `Benoni, Classical`,
 
-    // A45-49
-    if (codeNum.isBetween(45)) return `Queen's Pawn Game`;
-    if (codeNum.isBetween(46)) return `Torre Attack`
-    if (codeNum.isBetween(47)) return `Queen's Indian Defense`;
-    if (codeNum.isBetween(48, 49)) return `East Indian Defence`;
+        // A80-99
+        80: `Dutch Defense`,
+        letter: 'A',
+      },
 
-    // A50-79
-    if (codeNum.isBetween(50)) return `Queen's Pawn Game`;
-    if (codeNum.isBetween(51, 52)) return `Budapest Gamit`;
-    if (codeNum.isBetween(53, 55)) return `Old Indian Defense`;
-    if (codeNum.isBetween(56)) return `Benoni Defense`;
-    if (codeNum.isBetween(57, 59)) return `Benko Gamit`;
-    if (codeNum.isBetween(60, 69)) return `Benoni Defense`;
-    if (codeNum.isBetween(70, 79)) return `Benoni, Classical`;
+      {
 
-    // A80-99
-    if (codeNum.isBetween(80, 99)) return `Dutch Defense`;
-  }
+        // B00-19
+        0: `King's Pawn Opening`,
+        1: `Scandinavian Defence`,
+        2: `Alekhine's Defense`,
+        6: `Modern Defence`,
+        7: `Pirc Defense`,
+        10: `Caro-Kann Defence`,
 
-  function codeBOpenings(codeNum) {
+        // B20-99
+        20: `Sicilian Defence`,
+        34: `Accelerated Dragon`,
+        40: `Sicilian Defence`,
+        60: `Sicilian, Richter-Rauzer`,
+        70: `Sicilian Dragon`,
+        80: `Sicilian Scheveningen`,
+        90: `Sicilian Najdorf`,
+        letter: 'B',
+      },
 
-    // B00-19
-    if (codeNum.isBetween(0)) return `King's Pawn Opening`;
-    if (codeNum.isBetween(1)) return `Scandinavian Defence`;
-    if (codeNum.isBetween(2, 5)) return `Alekhine's Defense`;
-    if (codeNum.isBetween(6)) return `Modern Defence`;
-    if (codeNum.isBetween(7, 9)) return `Pirc Defense`;
-    if (codeNum.isBetween(10, 10)) return `Caro-Kann Defence`;
+      {
+        // C00-19
+        0: `French Defence`,
 
-    // B20-99
-    if (codeNum.isBetween(20, 33)) return `Sicilian Defence`;
-    if (codeNum.isBetween(34, 39)) return `Accelerated Dragon`;
-    if (codeNum.isBetween(40, 59)) return `Sicilian Defence`;
-    if (codeNum.isBetween(60, 69)) return `Sicilian, Richter-Rauzer`;
-    if (codeNum.isBetween(70, 79)) return `Sicilian Dragon`;
-    if (codeNum.isBetween(80, 89)) return `Sicilian Scheveningen`;
-    if (codeNum.isBetween(90, 99)) return `Sicilian Najdorf`;
-  }
+        // C20-59
+        20: `King's Pawn Game`,
+        21: `Center Game`,
+        23: `Bishop's Opening`,
+        25: `Vienna Game`,
+        30: `King's Gambit`,
+        40: `King's Knight Opening`,
+        41: `Philidor Defence`,
+        42: `Petrov's Defence`,
+        44: `King's Pawn Game`,
+        45: `Scotch Game`,
+        46: `Three Knights Game`,
+        47: `Four Knight's Game`,
+        50: `Italian Game`,
+        51: `Evan's Gambit`,
+        53: `Giuoco Piano`,
+        55: `Two Knights Defence`,
 
-  function codeCOpenings(codeNum) {
+        // C60-99
+        60: `Ruy Lopez`,
+        letter: 'C',
+      },
 
-    // C00-19
-    if (codeNum.isBetween(0, 19)) return `French Defence`;
+      {
+        // D00-69
+        0: `Queen's Pawn Game`,
+        1: `Richter-Veresov Attack`,
+        2: `London System`,
+        3: `Torre Attack`,
+        4: `Queen's Pawn Game`,
+        6: `Queen's Gambit`,
+        7: `Queen's Gambit Declined`,
+        20: `Queen's Gambit Accepted`,
+        30: `Queen's Gambit Declined`,
 
-    // C20-59
-    if (codeNum.isBetween(20)) return `King's Pawn Game`;
-    if (codeNum.isBetween(21, 22)) return `Center Game`;
-    if (codeNum.isBetween(23, 24)) return `Bishop's Opening`;
-    if (codeNum.isBetween(25, 29)) return `Vienna Game`;
-    if (codeNum.isBetween(30, 39)) return `King's Gambit`;
-    if (codeNum.isBetween(40)) return `King's Knight Opening`;
-    if (codeNum.isBetween(41)) return `Philidor Defence`;
-    if (codeNum.isBetween(42, 43)) return `Petrov's Defence`;
-    if (codeNum.isBetween(44)) return `King's Pawn Game`;
-    if (codeNum.isBetween(45)) return `Scotch Game`;
-    if (codeNum.isBetween(46)) return `Three Knights Game`;
-    if (codeNum.isBetween(47, 49)) return `Four Knight's Game`;
-    if (codeNum.isBetween(50)) return `Italian Game`;
-    if (codeNum.isBetween(51, 52)) return `Evan's Gambit`;
-    if (codeNum.isBetween(53, 54)) return `Giuoco Piano`;
-    if (codeNum.isBetween(55, 59)) return `Two Knights Defence`;
+        // D70-99
+        70: `Neo-Grünfeld Defence`,
+        80: `Grünfeld Defence`,
+        letter: 'D',
+      },
 
-    // C60-99
-    if (codeNum.isBetween(60, 99)) return `Ruy Lopez`;
-    // Consider Expanding
-  }
+      {
+        // E00-59
+        0: `Queen's Pawn Game`,
+        1: `Catalan Opening`,
+        11: `Bogo-Indian Defence`,
+        12: `Queen's Indian Defence`,
+        20: `Nimzo-Indian Defence`,
 
-  function codeDOpenings(codeNum) {
-
-    // D00-69
-    if (codeNum.isBetween(0)) return `Queen's Pawn Game`;
-    if (codeNum.isBetween(1)) return `Richter-Veresov Attack`;
-    if (codeNum.isBetween(2)) return `London System`;
-    if (codeNum.isBetween(3)) return `Torre Attack`;
-    if (codeNum.isBetween(4, 5)) return `Queen's Pawn Game`;
-    if (codeNum.isBetween(6)) return `Queen's Gambit`;
-    if (codeNum.isBetween(7, 19)) return `Queen's Gambit Declined`;
-    if (codeNum.isBetween(20, 29)) return `Queen's Gambit Accepted`;
-    if (codeNum.isBetween(30, 69)) return `Queen's Gambit Declined`;
-
-    // D70-99
-    if (codeNum.isBetween(70, 79)) return `Neo-Grünfeld Defence`;
-    if (codeNum.isBetween(80, 99)) return `Grünfeld Defence`;
-  }
-
-  function codeEOpenings(codeNum) {
-
-    // E00-59
-    if (codeNum.isBetween(0)) return `Queen's Pawn Game`;
-    if (codeNum.isBetween(1, 10)) return `Catalan Opening`;
-    if (codeNum.isBetween(11)) return `Bogo-Indian Defence`;
-    if (codeNum.isBetween(12, 19)) return `Queen's Indian Defence`;
-    if (codeNum.isBetween(20, 59)) return `Nimzo-Indian Defence`;
-
-    // E60-99
-    if (codeNum.isBetween(60, 99)) return `King's Indian Defence`;
-  }
-
-  function CodeNum(codeNum) {
-    this.val = codeNum;
-    this.isBetween = (min, max = min) => this.val >= min && this.val <= max;
+        // E60-99
+        60: `King's Indian Defence`,
+        letter: 'E',
+      }
+    ];
+    return openingMasterList.find(codeList => codeList.letter === codeLetter);
   }
 }
 
