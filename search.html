@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your most common lichess openings">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lichess Opening, Find your most played openings</title>
+
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+  <header role="banner">
+    <h1> Common Openings Played </h1>
+  </header>
+
+  <main role="main">
+
+    <section role="region">
+      <h2>Search Lichess</h2>
+      <form action="#">
+        <div>
+          <label for="username">Username: </label>
+          <input type="text" name="username" id="username" autocomplete="off" aria-required="true"
+            placeholder="username" value="">
+        </div>
+
+        <fieldset>
+          <legend>Color: </legend>
+
+          <label for="white">
+            <input type="radio" name="color" id="white" value="white" required checked> White
+          </label>
+
+          <label for="black">
+            <input type="radio" name="color" id="black" value="black" required> Black
+          </label>
+
+          <label for="both">
+            <input type="radio" name="color" id="both" value="null" required> Both</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Game Type:</legend>
+
+          <label for="bullet">
+            <input type="checkbox" name="gametype" id="bullet" value="bullet"> Bullet
+          </label>
+
+          <label for="blitz">
+            <input type="checkbox" name="gametype" id="blitz" value="blitz" checked> Blitz
+          </label>
+
+          <label for="rapid">
+            <input type="checkbox" name="gametype" id="rapid" value="rapid" checked> Rapid
+          </label>
+
+          <label for="classical">
+            <input type="checkbox" name="gametype" id="classical" value="classical" checked> Classical
+          </label>
+
+          <label for="correspondence">
+            <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
+              checked> Correspondence
+          </label>
+        </fieldset>
+
+        <div>
+          <label for="number-of-games">Last # of Games: </label>
+          <input type="number" name="number-of-games" id="number-of-games" min="10" max="200"
+            value="20" required>
+        </div>
+
+        <input type="submit" value="Search" class="js-submit">
+      </form>
+      <div class="js-message message" aria-live="assertive">
+        <p>Searching more games increases wait time</p>
+      </div>
+    </section>
+
+    <section role="region" class="js-table table" aria-live="assertive">
+      <h2>Openings</h2>
+      <table>
+        <thead>
+          <th scope="col" class="left">Opening</th>
+          <th scope="col" class="right">Games</th>
+        </thead>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="ecoSort.js"></script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>
