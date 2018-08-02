@@ -38,6 +38,8 @@ section {
   min-height: 250px;
   margin: 15px 0;
   padding: 0 30px;
+
+  border-radius: 15px;
 }
 
 form {

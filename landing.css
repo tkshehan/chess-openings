@@ -47,3 +47,7 @@ a, a:visited {
   max-width: 500px;
   padding: 0 30px;
 }
+
+h1 {
+  text-align: center;
+}
