@@ -75,7 +75,7 @@ input {
 .error {
   font-family: monospace;
 
-  color: red;
+  color: #ffe5e5;
 }
 
 h1, h2, h3 {
