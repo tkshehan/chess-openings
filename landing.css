@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 66.66vh;
 }
@@ -17,6 +21,10 @@ a, a:visited {
   text-decoration: none;
 
   color: inherit;
+}
+
+.start {
+  background: white;
 }
 
 section {
