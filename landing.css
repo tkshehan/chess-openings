@@ -3,7 +3,7 @@
 }
 
 html {
-  height: 66.66vh;
+  height: 100%;
 }
 
 body, main {
@@ -14,7 +14,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 a, a:visited {
@@ -33,21 +33,32 @@ a, a:visited {
   padding: 5px 15px;
 }
 
+.right {
+  background-color: inherit;
+}
+
 section {
   display: flex;
   align-items: center;
+  flex-basis: 50%;
   flex-direction: column;
   justify-content: center;
 
   width: 100%;
-  height: 66.66%;
+  height: 100%;
 }
 
-section div {
+section > div {
   max-width: 500px;
   padding: 0 30px;
 }
 
-h1 {
-  text-align: center;
+@media only screen and (min-width: 750px) {
+  main {
+    flex-direction: row;
+  }
+
+  h1, p {
+    text-align: right;
+  }
 }
