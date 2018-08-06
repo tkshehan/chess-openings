@@ -22,8 +22,11 @@ function searchLichess() {
 function buildQuery() {
 
   let gameTypes = '';
-  $('[name=gametype]').filter(type => $(type).attr('checked')).each(function() {
-    gameTypes += $(this).val() + ',';
+  $('[name=gametype]').each(function() {
+    console.log($(this));
+    if ($(this)[0].checked) {
+      gameTypes += $(this).val() + ', ';
+    }
   });
 
   return new Query(
