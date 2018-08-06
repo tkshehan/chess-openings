@@ -25,12 +25,13 @@ a, a:visited {
 
 .start, section {
   color: white;
-  border-radius: 5px;
   background-color: #34495e;
 }
 
 .start {
   padding: 5px 15px;
+
+  border-radius: 5px;
 }
 
 .right {

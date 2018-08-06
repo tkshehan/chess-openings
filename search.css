@@ -10,6 +10,10 @@ a, a:visited {
   text-decoration: none;
 }
 
+legend {
+  font-weight: bold;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -51,7 +55,7 @@ form {
 form div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 
   margin: 5px;
 }
@@ -67,7 +71,7 @@ fieldset {
 
 input {
   max-width: 50%;
-  margin: 0 5px;
+  margin: 0 0 0 8px;
 }
 
 .message {
@@ -87,6 +91,11 @@ h1, h2, h3 {
 input[type=submit] {
   width: 50%;
   margin: 0 auto;
+  margin-top: 10px;
+}
+
+section {
+  width: 100%;
 }
 
 table {
