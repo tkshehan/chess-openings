@@ -21,6 +21,10 @@ a, a:visited {
   color: #e0ffff;
 }
 
+h1 a, a:visited {
+  color: black;
+}
+
 input[type=submit] {
   border: 1px solid black;
   background-color: #16a085;
