@@ -35,13 +35,15 @@ a, a:visited {
 }
 
 .right {
+  flex-basis: 40%;
+
   background-color: inherit;
 }
 
 section {
   display: flex;
   align-items: center;
-  flex-basis: 50%;
+  flex-basis: 60%;
   flex-direction: column;
   justify-content: center;
 
