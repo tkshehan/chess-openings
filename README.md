@@ -2,13 +2,6 @@
 
 Utility for finding and understanding your most encountered openings on https://lichess.org/
 
-## Built With 
-
-* HTML
-* Javacript
-* CSS
-* JQuery
-
 ## Features
 
 * Find the most frequent openings used by someone in their last 10 tp 200  games
@@ -21,8 +14,16 @@ https://tkshehan.github.io/chess-openings/
 
 ## Usernames to Test
 
+* german11 - Accoutn with the most games played
 * eskimoform - My account
 * DrDrunkenstein - Magnus Carlsen, current World Champion (**bullet games only**)
-* https://lichess.org/player for more players.
+* Visit https://lichess.org/player for more players.
+
+## Built With 
+
+* HTML
+* Javacript
+* CSS
+* JQuery
 
 

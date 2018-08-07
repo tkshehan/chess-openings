@@ -15,6 +15,12 @@ main {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+
+  text-align: center;
+}
+
+p {
+  text-align: left;
 }
 
 a, a:visited {
@@ -23,24 +29,32 @@ a, a:visited {
   color: inherit;
 }
 
-.start, section {
+img {
+  max-width: 300px;
+}
+
+section {
   color: white;
-  border-radius: 5px;
   background-color: #34495e;
 }
 
 .start {
   padding: 5px 15px;
+
+  border-radius: 20px;
+  background-color: #34495e;
 }
 
 .right {
+  flex-basis: 40%;
+
   background-color: inherit;
 }
 
 section {
   display: flex;
   align-items: center;
-  flex-basis: 50%;
+  flex-basis: 60%;
   flex-direction: column;
   justify-content: center;
 

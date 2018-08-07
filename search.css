@@ -6,23 +6,23 @@ main, header {
   max-width: 80%;
 }
 
+img {
+  max-width: 250px;
+}
+
 a, a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+legend {
+  font-weight: bold;
 }
 
 header {
   margin: 0 auto;
-  padding: 20px 0;
+  padding-top: 10px;
 
   text-align: center;
-}
-
-h1 {
-  margin: 0 auto;
 }
 
 main {
@@ -48,16 +48,16 @@ form {
   flex-direction: column;
 }
 
-form div {
+form > div.row {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
 
-  margin: 5px;
+  margin: 15px 0;
 }
 
 fieldset {
   display: flex;
+  flex-basis: 40%;
   flex-direction: column;
 
   margin: 5px;
@@ -66,8 +66,7 @@ fieldset {
 }
 
 input {
-  max-width: 50%;
-  margin: 0 5px;
+  margin: 0 0 0 8px;
 }
 
 .message {
@@ -80,13 +79,24 @@ input {
   color: #ffe5e5;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
   text-align: center;
 }
 
 input[type=submit] {
   width: 50%;
   margin: 0 auto;
+  margin-top: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+
+  white-space: nowrap;
+}
+
+section {
+  width: 100%;
 }
 
 table {
@@ -102,11 +112,54 @@ table {
   text-align: right;
 }
 
-@media only screen and (min-width: 700px) {
-  fieldset {
-    display: inline-block;
-  }
+.username {
+  min-width: 20px;
+}
 
+.hidden {
+  display: none;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+
+  display: inline-block;
+
+  border-bottom: 1px dotted white;
+}
+
+.tooltiptext {
+  font-size: 12px;
+
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+
+  visibility: hidden;
+
+  width: 120px;
+  margin-left: -60px;
+  padding: 5px;
+
+  transition: opacity 0.3s;
+  text-align: center;
+  white-space: normal;
+
+  opacity: 0;
+  color: black;
+  border: 1px solid black;
+  border-radius: 6px;
+  background: white;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+
+  opacity: 1;
+}
+
+@media only screen and (min-width: 700px) {
   header, main {
     width: 550px;
   }

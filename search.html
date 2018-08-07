@@ -9,66 +9,94 @@
   <title>Lichess Opening Sort, Find your most played openings</title>
 
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="search.css">
 </head>
 
 <body>
   <header role="banner">
-    <h1>
-      <a href="https://lichess.org/">lichess.org</a> Opening Sort</h1>
+    <img src="logo-black.png" alt="Logo Lichess Opening Sort">
   </header>
 
   <main role="main">
 
     <section role="region">
-      <h2>Search Lichess</h2>
+      <h2>Search
+        <a href="http://lichess.org"> Lichess</a>
+      </h2>
+      <p>For a full list of players visit
+        <a href="http://lichess.org/player">lichess.org/player</a>
+      </p>
       <form action="#">
-        <div>
+        <div class="row">
           <label for="username">Username: </label>
-          <input type="text" name="username" id="username" autocomplete="off" aria-required="true"
-            placeholder="german11" value="">
+          <input class="username" type="text" name="username" id="username" autocomplete="off"
+            aria-required="true" placeholder="german11" value="">
         </div>
 
-        <fieldset>
-          <legend>Color: </legend>
+        <div class="row">
+          <fieldset>
+            <legend>Color: </legend>
 
-          <label for="white">
-            <input type="radio" name="color" id="white" value="white" required checked> White
-          </label>
+            <label for="white">
+              <input type="radio" name="color" id="white" value="white" required checked> White
+            </label>
 
-          <label for="black">
-            <input type="radio" name="color" id="black" value="black" required> Black
-          </label>
+            <label for="black">
+              <input type="radio" name="color" id="black" value="black" required> Black
+            </label>
 
-          <label for="both">
-            <input type="radio" name="color" id="both" value="null" required> Both</label>
-        </fieldset>
+            <label for="both">
+              <input type="radio" name="color" id="both" value="null" required> Both</label>
+          </fieldset>
 
-        <fieldset>
-          <legend>Game Type:</legend>
+          <fieldset>
+            <legend>Game Type:</legend>
 
-          <label for="bullet">
-            <input type="checkbox" name="gametype" id="bullet" value="bullet"> Bullet
-          </label>
+            <label for="bullet">
+              <input type="checkbox" name="gametype" id="bullet" value="bullet">
+              <span class="tooltip">
+                Bullet
+                <div class="tooltiptext">Very fast games: less than 3 minutes</div>
+              </span>
+            </label>
 
-          <label for="blitz">
-            <input type="checkbox" name="gametype" id="blitz" value="blitz" checked> Blitz
-          </label>
+            <label for="blitz">
+              <input type="checkbox" name="gametype" id="blitz" value="blitz" checked>
+              <span class="tooltip">
+                Blitz
+                <div class="tooltiptext">Fast games: 3 to 8 minutes</div>
+              </span>
+            </label>
 
-          <label for="rapid">
-            <input type="checkbox" name="gametype" id="rapid" value="rapid" checked> Rapid
-          </label>
+            <label for="rapid">
+              <input type="checkbox" name="gametype" id="rapid" value="rapid" checked>
+              <span class="tooltip">
+                Rapid
+                <div class="tooltiptext">Rapid games: 8 to 25 minutes</div>
+              </span>
+            </label>
 
-          <label for="classical">
-            <input type="checkbox" name="gametype" id="classical" value="classical" checked> Classical
-          </label>
+            <label for="classical">
+              <input type="checkbox" name="gametype" id="classical" value="classical" checked>
+              <span class="tooltip">
+                Classical
+                <p class="tooltiptext">Classical games: 25 minutes and more</p>
+              </span>
+            </label>
 
-          <label for="correspondence">
-            <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
-              checked> Correspondence
-          </label>
-        </fieldset>
+            <label for="correspondence">
+              <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
+                checked>
+              <span class="tooltip">
+                Correspondence
+                <p class="tooltiptext">Correspondence games: 1 Move Per Day Minimum
+                </p>
+              </span>
+            </label>
+          </fieldset>
+        </div>
 
         <div>
           <label for="number-of-games">Last # of Games: </label>
@@ -83,7 +111,7 @@
       </div>
     </section>
 
-    <section role="region" class="js-table table" aria-live="assertive">
+    <section role="region" class="js-table table hidden" aria-live="assertive">
       <h2>Openings</h2>
       <table>
         <thead>
