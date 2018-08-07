@@ -43,7 +43,7 @@ input[type=submit] {
   box-shadow: 2px 2px 5px black;
 }
 
-input[type=submit]:active {
+input[type=submit]:active, input:disabled {
   box-shadow: none;
 }
 
