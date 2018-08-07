@@ -15,12 +15,22 @@ main {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+
+  text-align: center;
+}
+
+p {
+  text-align: left;
 }
 
 a, a:visited {
   text-decoration: none;
 
   color: inherit;
+}
+
+img {
+  max-width: 300px;
 }
 
 .start, section {

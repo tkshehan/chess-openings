@@ -6,6 +6,10 @@ main, header {
   max-width: 80%;
 }
 
+img {
+  max-width: 250px;
+}
+
 a, a:visited {
   text-decoration: none;
 }
@@ -14,13 +18,9 @@ legend {
   font-weight: bold;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 header {
   margin: 0 auto;
-  padding: 20px 0;
+  padding-top: 10px;
 
   text-align: center;
 }

@@ -29,6 +29,10 @@ h1 a, h1 a:visited {
   color: inherit;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 input[type=submit] {
   max-width: 100px;
   padding: 5px;
