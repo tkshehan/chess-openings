@@ -22,7 +22,12 @@
   <main role="main">
 
     <section role="region">
-      <h2>Search Lichess</h2>
+      <h2>Search
+        <a href="http://lichess.org"> Lichess</a>
+      </h2>
+      <p>For a full list of players visit
+        <a href="http://lichess.org/player">lichess.org/player</a>
+      </p>
       <form action="#">
         <div class="row">
           <label for="username">Username: </label>
@@ -50,24 +55,45 @@
             <legend>Game Type:</legend>
 
             <label for="bullet">
-              <input type="checkbox" name="gametype" id="bullet" value="bullet"> Bullet
+              <input type="checkbox" name="gametype" id="bullet" value="bullet">
+              <span class="tooltip">
+                Bullet
+                <div class="tooltiptext">Very fast games: less than 3 minutes</div>
+              </span>
             </label>
 
             <label for="blitz">
-              <input type="checkbox" name="gametype" id="blitz" value="blitz" checked> Blitz
+              <input type="checkbox" name="gametype" id="blitz" value="blitz" checked>
+              <span class="tooltip">
+                Blitz
+                <div class="tooltiptext">Fast games: 3 to 8 minutes</div>
+              </span>
             </label>
 
             <label for="rapid">
-              <input type="checkbox" name="gametype" id="rapid" value="rapid" checked> Rapid
+              <input type="checkbox" name="gametype" id="rapid" value="rapid" checked>
+              <span class="tooltip">
+                Rapid
+                <div class="tooltiptext">Rapid games: 8 to 25 minutes</div>
+              </span>
             </label>
 
             <label for="classical">
-              <input type="checkbox" name="gametype" id="classical" value="classical" checked> Classical
+              <input type="checkbox" name="gametype" id="classical" value="classical" checked>
+              <span class="tooltip">
+                Classical
+                <p class="tooltiptext">Classical games: 25 minutes and more</p>
+              </span>
             </label>
 
             <label for="correspondence">
               <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
-                checked> Correspondence
+                checked>
+              <span class="tooltip">
+                Correspondence
+                <p class="tooltiptext">Correspondence games: 1 Move Per Day Minimum
+                </p>
+              </span>
             </label>
           </fieldset>
         </div>
