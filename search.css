@@ -52,8 +52,16 @@ form {
   flex-direction: column;
 }
 
+form > div.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 20px 0;
+}
+
 fieldset {
   display: flex;
+  flex-basis: 40%;
   flex-direction: column;
 
   margin: 5px;
@@ -62,7 +70,6 @@ fieldset {
 }
 
 input {
-  max-width: 50%;
   margin: 0 0 0 8px;
 }
 
@@ -86,6 +93,10 @@ input[type=submit] {
   margin-top: 10px;
 }
 
+label {
+  white-space: nowrap;
+}
+
 section {
   width: 100%;
 }
@@ -101,6 +112,10 @@ table {
 
 .right {
   text-align: right;
+}
+
+.username {
+  min-width: 20px;
 }
 
 @media only screen and (min-width: 700px) {

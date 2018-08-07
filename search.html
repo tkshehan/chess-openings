@@ -25,51 +25,53 @@
     <section role="region">
       <h2>Search Lichess</h2>
       <form action="#">
-        <div>
+        <div class="row">
           <label for="username">Username: </label>
-          <input type="text" name="username" id="username" autocomplete="off" aria-required="true"
-            placeholder="german11" value="">
+          <input class="username" type="text" name="username" id="username" autocomplete="off"
+            aria-required="true" placeholder="german11" value="">
         </div>
 
-        <fieldset>
-          <legend>Color: </legend>
+        <div class="row">
+          <fieldset>
+            <legend>Color: </legend>
 
-          <label for="white">
-            <input type="radio" name="color" id="white" value="white" required checked> White
-          </label>
+            <label for="white">
+              <input type="radio" name="color" id="white" value="white" required checked> White
+            </label>
 
-          <label for="black">
-            <input type="radio" name="color" id="black" value="black" required> Black
-          </label>
+            <label for="black">
+              <input type="radio" name="color" id="black" value="black" required> Black
+            </label>
 
-          <label for="both">
-            <input type="radio" name="color" id="both" value="null" required> Both</label>
-        </fieldset>
+            <label for="both">
+              <input type="radio" name="color" id="both" value="null" required> Both</label>
+          </fieldset>
 
-        <fieldset>
-          <legend>Game Type:</legend>
+          <fieldset>
+            <legend>Game Type:</legend>
 
-          <label for="bullet">
-            <input type="checkbox" name="gametype" id="bullet" value="bullet"> Bullet
-          </label>
+            <label for="bullet">
+              <input type="checkbox" name="gametype" id="bullet" value="bullet"> Bullet
+            </label>
 
-          <label for="blitz">
-            <input type="checkbox" name="gametype" id="blitz" value="blitz" checked> Blitz
-          </label>
+            <label for="blitz">
+              <input type="checkbox" name="gametype" id="blitz" value="blitz" checked> Blitz
+            </label>
 
-          <label for="rapid">
-            <input type="checkbox" name="gametype" id="rapid" value="rapid" checked> Rapid
-          </label>
+            <label for="rapid">
+              <input type="checkbox" name="gametype" id="rapid" value="rapid" checked> Rapid
+            </label>
 
-          <label for="classical">
-            <input type="checkbox" name="gametype" id="classical" value="classical" checked> Classical
-          </label>
+            <label for="classical">
+              <input type="checkbox" name="gametype" id="classical" value="classical" checked> Classical
+            </label>
 
-          <label for="correspondence">
-            <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
-              checked> Correspondence
-          </label>
-        </fieldset>
+            <label for="correspondence">
+              <input type="checkbox" name="gametype" id="correspondence" value="correspondence"
+                checked> Correspondence
+            </label>
+          </fieldset>
+        </div>
 
         <div>
           <label for="number-of-games">Last # of Games: </label>
