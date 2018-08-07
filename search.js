@@ -67,7 +67,7 @@ function displayInvalidUser(error) {
   enableSubmit();
   console.log(error);
   $('.js-message').html(`
-    <p class="error">no known user has games of this type</p>
+    <p class="error">failed to find games of this type for selected user</p>
   `);
 }
 
