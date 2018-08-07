@@ -89,6 +89,7 @@ function handleSuccess(data) {
   enableSubmit();
   successMessage();
   parseData(data);
+  revealTable();
 
   Promise.all(userData.keysSorted.map(opening => openSearch(opening)))
     .then(function(urls) {
@@ -159,6 +160,10 @@ function parseData(data) {
       .filter(a => a !== '?' && a !== 'undefined' && a !== '');
     return keys;
   }
+}
+
+function revealTable() {
+  $('.js-table').removeClass('hidden');
 }
 
 function displayTable(data, keyOrder, urls) {
