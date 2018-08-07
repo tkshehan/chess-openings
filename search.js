@@ -16,21 +16,19 @@ function handleForm() {
 
 function searchLichess() {
   let query = buildQuery();
-  console.log(query);
   $.ajax(query);
 }
 
 function buildQuery() {
-
-  // 
-
   let gameTypes = '';
   $('[name=gametype]').each(function() {
-    console.log($(this));
     if ($(this)[0].checked) {
       gameTypes += $(this).val() + ', ';
     }
   });
+
+  gameTypes = gameTypes.substring(0, gameTypes.length - 2)
+  console.log(gameTypes);
 
   return new Query(
     $('#username').val(),

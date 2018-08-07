@@ -1,4 +1,6 @@
 function sortByEco(ecoCode) {
+  if (typeof ecoCode !== 'string') return;
+
   let codeNum = ecoCode.slice(1);
   let openingCodeList = findCodeList(ecoCode.charAt(0));
 
