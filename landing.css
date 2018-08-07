@@ -33,7 +33,7 @@ img {
   max-width: 300px;
 }
 
-.start, section {
+section {
   color: white;
   background-color: #34495e;
 }
@@ -41,7 +41,8 @@ img {
 .start {
   padding: 5px 15px;
 
-  border-radius: 5px;
+  border-radius: 20px;
+  background-color: #34495e;
 }
 
 .right {
