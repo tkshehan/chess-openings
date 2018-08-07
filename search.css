@@ -52,14 +52,6 @@ form {
   flex-direction: column;
 }
 
-form div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  margin: 5px;
-}
-
 fieldset {
   display: flex;
   flex-direction: column;
@@ -112,10 +104,6 @@ table {
 }
 
 @media only screen and (min-width: 700px) {
-  fieldset {
-    display: inline-block;
-  }
-
   header, main {
     width: 550px;
   }
