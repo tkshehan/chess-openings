@@ -41,8 +41,13 @@ section {
 .start {
   padding: 5px 15px;
 
+  color: black;
   border-radius: 20px;
-  background-color: #34495e;
+  background-color: #16a085;
+}
+
+.right a:hover {
+  text-decoration: none;
 }
 
 .right {
