@@ -53,7 +53,7 @@ function Query(username, games, color, type) {
   this.success = handleSuccess;
   this.error = displayInvalidUser;
   this.beforeSend = function() {
-    displayWaitMessage;
+    displayWaitMessage();
     $('.js-submit').prop('disabled', true);
   }
   this.timeout = 100000;
@@ -73,7 +73,7 @@ function displayInvalidUser(error) {
 
 function displayWaitMessage() {
   $('.js-message').html(`
-  <p>Please wait 1 second for every 10 requested games</p>
+  <div class="loader">Loading...</div>
   `);
 }
 
