@@ -17,7 +17,7 @@ Utility for finding and understanding your most encountered openings on https://
 
 ## Demo
 
-https://tkshehan.github.io/chess-openings/
+https://tkshehan.github.io/chess-openings/ // No Longer Functional
 
 
 ## Built With 
