@@ -1,4 +1,4 @@
-# Lichess Opening Search (Depricated)
+# Lichess Opening Search 
 
 Utility for finding and understanding your most encountered openings on https://lichess.org/
 
